@@ -1,0 +1,80 @@
+<div class="container">
+
+    <div class="header">
+        <h2>User Management</h2>
+        <button class="add-btn" (click)="openModal()"><i class="fa-solid fa-plus mx-2"></i> Add User</button>
+    </div>
+
+    <div class="user-list">
+        <table class="user-table" *ngIf="users().length > 0; else noUsers">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th class="action-col">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let user of users(); let i = index">
+                    <td>{{ i + 1 }}</td>
+
+                    <td class="name-cell">
+                        <span class="user-icon"><i class="fa-solid fa-circle-user"></i></span>
+                        {{ user.name }}
+                    </td>
+
+                    <td>{{ user.email }}</td>
+
+                    <td class="action-col">
+                        <button class="delete-btn" (click)="removeUser(user.id)"> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ng-template #noUsers>
+        <div class="empty-state">
+            No users added yet.
+        </div>
+    </ng-template>
+
+    <div class="total-users">
+        Total Users: {{ userService.totalUsers() }}
+    </div>
+
+</div>
+
+<app-reusable-modal>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+
+        <h3 style="text-align: center; margin: 10px;">
+            Add New User
+        </h3>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input formControlName="name" placeholder="Enter Name">
+            <small class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                Name is required
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input formControlName="email" placeholder="Enter Email">
+            <small class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                Valid email is required
+            </small>
+        </div>
+
+        <div class="row">
+            <button type="submit" [disabled]="form.invalid" class="submit-btn">
+                Save
+            </button>
+        </div>
+    </form>
+</app-reusable-modal>

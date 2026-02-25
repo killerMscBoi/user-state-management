@@ -1,0 +1,6 @@
+<div class="overlay" *ngIf="isOpen">
+  <div class="modal">
+    <button class="close-btn" (click)="close()"><i class="fa-solid fa-x"></i></button>
+    <ng-content></ng-content>
+  </div>
+</div>

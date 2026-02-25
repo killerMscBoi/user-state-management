@@ -1,0 +1,177 @@
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f6f6b8;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.add-btn {
+    display: block;
+    padding: 10px 22px;
+    background: linear-gradient(45deg, #1976d2, #42a5f5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+}
+
+.user-list {
+    height: 400px;
+    overflow: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.user-table thead {
+    background: #f5f7fa;
+}
+
+.user-table th,
+.user-table td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.user-table th {
+    font-weight: 600;
+    color: #1f7dd7;
+    font-size: 14px;
+}
+
+.user-table tbody tr {
+    border-top: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f9fbff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.name-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-icon {
+    font-size: 25px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-icon i {
+    font-size: 28px;
+    color: #1976d2;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-col {
+    text-align: center;
+}
+
+.delete-btn {
+    background: linear-gradient(45deg, #e53935, #ff5252);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+}
+
+.total-users {
+    margin-top: 15px;
+    text-align: right;
+    font-weight: 500;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 8px;
+    float: right;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #125aa3;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+}
